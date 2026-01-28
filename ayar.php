@@ -1,23 +1,30 @@
 <?php
+// Codexnook - Database Configuration
+// Not: GitHub'a yüklerken şifre gibi hassas bilgileri temizlemeyi unutmayın!
 
-$host = "localhost";
-$dbname = "forumsitesi";
+$host    = "localhost";
+$dbname  = "forumsitesi";
 $charset = "utf8";
-$root = "baha";
-$password = "990088Bb";
+$root    = "root";     // Kendi kullanıcı adınızla değiştirin
+$password = "";         // Şifrenizi buraya boş bırakıp yerelinizde doldurun
 
 try {
-	$db = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset;", $root, $password);
+    // Veritabanı bağlantısı
+    $db = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset;", $root, $password);
+    
+    // Hata modunu aktifleştirelim (Geliştirme aşamasında hataları görmek için iyidir)
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 } catch (PDOException $error) {
-	echo $error->getMessage();
+    // Hata mesajını kullanıcıya çok detaylı göstermek güvenlik açığı yaratabilir
+    // Mühendislik yaklaşımı: Hata varsa "Bağlantı Hatası" yazdır, detayı logla.
+    die("Veritabanı bağlantı hatası oluştu.");
 }
-if(
-    @$_COOKIE["uye_eposta"]
-    ) {
-        $uyecek = $db -> prepare("SELECT * FROM uyeler WHERE uye_eposta=?");
-        $uyecek -> execute(array(
-            $_COOKIE["uye_eposta"]
-            ));
-            $fetch  =  $uyecek -> fetch(PDO::FETCH_ASSOC);
-    }
+
+// Oturum/Cookie Kontrolü
+if(isset($_COOKIE["uye_eposta"])) {
+    $uyecek = $db->prepare("SELECT * FROM uyeler WHERE uye_eposta=?");
+    $uyecek->execute([$_COOKIE["uye_eposta"]]);
+    $fetch = $uyecek->fetch(PDO::FETCH_ASSOC);
+}
 ?>
