@@ -17,8 +17,12 @@
             </div>
             <div class="menu">
                 <?php
-                session_start();
-                if (@$_SESSION["uye_id"]) {
+// Eğer oturum zaten başlatılmamışsa başlat
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (@$_SESSION["uye_id"]) {
                     echo '
       <a href="index.php" class="button">Anasayfa</a>
       <a href="uyeler.php" class="button">Üyelerimiz</a>
