@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// DEBUG: Session durumunu kontrol et
+echo "<!-- Session Durumu: ";
+echo isset($_SESSION['uye_id']) ? "GİRİŞLİ - ID: " . $_SESSION['uye_id'] : "ÇIKIŞ YAPILMIŞ";
+echo " -->";
+
 require_once 'ayar.php';
 require_once 'ukas.php';
 require_once 'func.php';
