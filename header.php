@@ -13,28 +13,31 @@
         <div class="container">
             <div class="logo">
                 <h1>CodexNook</h1>
-                </a>
             </div>
             <div class="menu">
                 <?php
-// Eğer oturum zaten başlatılmamışsa başlat
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+                // Eğer oturum zaten başlatılmamışsa başlat
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
 
-if (@$_SESSION["uye_id"]) {
+                // Düzgün session kontrolü
+                $girisli = isset($_SESSION["uye_id"]) && !empty($_SESSION["uye_id"]);
+
+                if ($girisli) {
                     echo '
-      <a href="index.php" class="button">Anasayfa</a>
-      <a href="uyeler.php" class="button">Üyelerimiz</a>
-      <a href="profil.php?kadi=' . @$_SESSION["uye_kadi"] . '"class="button">Profilime Git</a>
-      <a href="uyelik.php?p=cikis" class="button">Çıkış</a>
-      ';
+                    <a href="index.php" class="button">Anasayfa</a>
+                    <a href="uyeler.php" class="button">Üyelerimiz</a>
+                    <a href="profil.php?kadi=' . htmlspecialchars($_SESSION["uye_kadi"]) . '" class="button">Profilime Git</a>
+                    <a href="uyelik.php?p=cikis" class="button logout-btn">Çıkış</a>
+                    ';
                 } else {
                     echo '
-      <a href="index.php" class="button">Anasayfa</a>
-      <a href="uyeler.php" class="button">Üyelerimiz</a>
-      <a href="uyelik.php?p=kayit" class="button">Üye Ol</a>
-      <a href="uyelik.php" class="button">Giriş Yap</a>';
+                    <a href="index.php" class="button">Anasayfa</a>
+                    <a href="uyeler.php" class="button">Üyelerimiz</a>
+                    <a href="uyelik.php?p=kayit" class="button">Üye Ol</a>
+                    <a href="uyelik.php" class="button">Giriş Yap</a>
+                    ';
                 }
                 ?>
             </div>
