@@ -1,19 +1,5 @@
 <?php
 
-	/*
-	 *
-	 * Ukas
-	 * 
-	 * @author Uğur KILCI
-	 * @version 1.1
-	 * 
-	 * @github ugurkilci
-	 * @instagram ugur2nd
-	 * @twitter ugur2nd
-	 * 
-	 *
-	*/
-
 	$base = "http://localhost/";
 
 	function reptr($text) { // seo link yapısı
@@ -272,10 +258,24 @@
 	}
 
 	function ukas_cikis($ukas_ayar, $ukas_cikisyonlendir){
-		// Ayar dosyası, Çıkış yaptıktan sonra yönlendirilecek adres
-		// "ayar.php", "test.php"
-
-		include $ukas_ayar;
-		session_destroy();
-		header("REFRESH:2;URL=" . $ukas_cikisyonlendir);
-	}
+    include $ukas_ayar;
+    
+    // Session değişkenlerini temizle
+    $_SESSION = array();
+    
+    // Session cookie'sini sil
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
+    }
+    
+    // Session'ı yok et
+    session_destroy();
+    
+    // Yönlendir
+    header("Location: " . $ukas_cikisyonlendir);
+    exit();
+}
