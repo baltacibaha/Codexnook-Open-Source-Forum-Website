@@ -206,3 +206,330 @@ a {
     .main-content { flex-direction: column; }
     .right-column { width: 100%; }
 }
+/* Üyeler Sayfası Tasarımı */
+
+.uyeler-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.uyeler-box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.uyeler-box h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin: 0 0 30px 0;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    text-align: left;
+}
+
+.uyeler-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.uye-item {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.uye-item:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.uye-item a {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: #2c3e50;
+    gap: 15px;
+}
+
+.uye-icon {
+    font-size: 1.8em;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.uye-isim {
+    flex-grow: 1;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.uye-arrow {
+    font-size: 1.5em;
+    color: #3498db;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.uye-item:hover .uye-arrow {
+    transform: translateX(5px);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .uyeler-container {
+        padding: 10px;
+    }
+    
+    .uyeler-box {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    .uyeler-box h2 {
+        font-size: 1.5em;
+    }
+    
+    .uye-item a {
+        padding: 15px;
+    }
+    
+    .uye-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5em;
+    }
+    
+    .uye-isim {
+        font-size: 1em;
+    }
+}
+/* Profil Sayfası Tasarımı */
+
+.profil-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Profil Kartı */
+.profil-card {
+    background: #3498db;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(52, 152, 219, 0.3);
+}
+
+.profil-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.profil-avatar {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+    backdrop-filter: blur(10px);
+}
+
+.profil-bilgi {
+    flex-grow: 1;
+}
+
+.profil-isim {
+    color: white;
+    font-size: 2.2em;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.profil-eposta {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profil-eposta .icon {
+    font-size: 1.2em;
+}
+
+/* İçerik Bölümü */
+.profil-icerik {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 25px;
+}
+
+.icerik-kutu {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.kutu-baslik {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.baslik-icon {
+    font-size: 1.8em;
+}
+
+.kutu-baslik h3 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Liste Stilleri */
+.liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.liste-item {
+    margin-bottom: 10px;
+}
+
+.liste-item a {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    gap: 12px;
+}
+
+.liste-item a:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.15);
+}
+
+.item-nokta {
+    width: 8px;
+    height: 8px;
+    background: #3498db;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.item-text {
+    flex-grow: 1;
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.liste-bos {
+    padding: 20px;
+    text-align: center;
+    color: #95a5a6;
+    font-style: italic;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .profil-container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .profil-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .profil-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profil-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5em;
+    }
+
+    .profil-isim {
+        font-size: 1.8em;
+    }
+
+    .profil-eposta {
+        justify-content: center;
+        font-size: 1em;
+    }
+
+    .profil-icerik {
+        grid-template-columns: 1fr;
+    }
+
+    .icerik-kutu {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .kutu-baslik h3 {
+        font-size: 1.3em;
+    }
+
+    .liste-item a {
+        padding: 12px 15px;
+    }
+
+    .item-text {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .profil-isim {
+        font-size: 1.5em;
+    }
+
+    .kutu-baslik {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
