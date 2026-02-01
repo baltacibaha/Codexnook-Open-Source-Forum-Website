@@ -1,95 +1,94 @@
+<?php
+// Oturumu başlat
+session_start();
+
+// Veritabanı ayarları
+include 'ayar.php';
+include 'ukas.php';
+include 'func.php';
+
+// Admin ID listesi
+$admin_idler = [1, 2]; // Admin olan kullanıcı ID'leri
+
+// Admin kontrolü
+if (!isset($_SESSION["uye_id"]) || !in_array((int)$_SESSION["uye_id"], $admin_idler)) {
+    echo '<center><h1>❌ Sadece yöneticiler görebilir</h1></center>';
+    echo '<center><a href="index.php" style="color:#3498db; text-decoration:none;">← Ana Sayfaya Dön</a></center>';
+    exit;
+}
+?>
+
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="admin.css" />
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3809740976001286"
-     crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodexNook.com/Admin</title>
-  <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="admin.css" />
 </head>
 
 <body>
-    <?php
+    <?php include 'header2.php'; ?>
 
-    // Oturumu başlat
-    session_start();
-
-    // Veritabanı ayarları
-    include 'ayar.php';
-
-    // Ukas PHP
-    include 'ukas.php';
-
-    // Fonksiyonlar
-    include 'func.php';
-
-    if (@$_SESSION["uye_onay"] != 1) {
-        // Admin değilse
-    
-        echo '<center><h1>Sadece yöneticiler görebilir</h1><center>';
-
-        // Alttaki kodlar gizlensin/çalışmasın
-        exit;
-    }
-
-    ?>
     <div class="container">
-        <?php include 'header2.php'; // Header / Üst bilgi ?>
         <br><br>
-        <h2>Admin Paneli</h2>
+        <h2>⚙️ Admin Paneli</h2>
+        <p style="color:#7f8c8d;">Hoş geldiniz, <?= htmlspecialchars($_SESSION['uye_adsoyad']) ?>!</p>
         <hr>
         <h3>Kategori Ekle</h3>
+        
         <?php
-
         if ($_POST) {
-            $kategori = $_POST["kategori"];
+            $kategori = htmlspecialchars(trim($_POST["kategori"]));
             $kategoriLink = permalink($kategori);
 
-            // Veritabanına kategori ekle
-            $dataAdd = $db->prepare("INSERT INTO kategoriler SET
-                k_kategori=?,
-                k_kategori_link=?
-            ");
-            $dataAdd->execute([
-                $kategori,
-                $kategoriLink
-            ]);
+            if (!empty($kategori)) {
+                $dataAdd = $db->prepare("INSERT INTO kategoriler SET k_kategori=?, k_kategori_link=?");
+                $dataAdd->execute([$kategori, $kategoriLink]);
 
-            if ($dataAdd) {
-                echo '<p class="alert alert-success">Kategori başarıyla eklendi. :)</p>';
-
-                header("REFRESH:1;URL=admin.php");
+                if ($dataAdd) {
+                    echo '<p class="alert alert-success">✅ Kategori başarıyla eklendi!</p>';
+                    header("REFRESH:1;URL=admin.php");
+                } else {
+                    echo '<p class="alert alert-danger">❌ Bir sorunla karşılaştık!</p>';
+                }
             } else {
-                echo '<p class="alert alert-danger">Hay aksi bir sorunla karşılaştık, lütfen tekrar deneyiniz. :/</p>';
-
-                header("REFRESH:1;URL=admin.php");
+                echo '<p class="alert alert-warning">⚠️ Kategori adı boş olamaz!</p>';
             }
         }
-
         ?>
-        <form action="" method="post">
-            <strong>Kategori:</strong>
-            <input type="text" name="kategori">
-            <br>
-            <input type="submit" value="Kategori Oluştur">
+        
+        <form action="" method="post" class="admin-form">
+            <div class="form-group">
+                <label for="kategori"><strong>Kategori Adı:</strong></label>
+                <input type="text" id="kategori" name="kategori" class="form-control" placeholder="Kategori adı giriniz" required>
+            </div>
+            <button type="submit" class="btn-submit">Kategori Oluştur</button>
         </form>
 
         <hr>
 
-        <ol>
+        <h3>Mevcut Kategoriler</h3>
+        <ol class="category-list">
             <?php
-
-            $dataList = $db->prepare("SELECT * FROM kategoriler");
+            $dataList = $db->prepare("SELECT * FROM kategoriler ORDER BY k_kategori ASC");
             $dataList->execute();
             $dataList = $dataList->fetchALL(PDO::FETCH_ASSOC);
 
-            foreach ($dataList as $row) {
-                echo '<li><a href="kategori.php?q=' . $row["k_kategori_link"] . '">' . $row["k_kategori"] . '</a></li>';
+            if (count($dataList) > 0) {
+                foreach ($dataList as $row) {
+                    echo '<li><a href="kategori.php?q=' . htmlspecialchars($row["k_kategori_link"]) . '">' . htmlspecialchars($row["k_kategori"]) . '</a></li>';
+                }
+            } else {
+                echo '<li>Henüz kategori eklenmemiş.</li>';
             }
-
             ?>
         </ol>
+    </div>
+
+</body>
+
+</html>
