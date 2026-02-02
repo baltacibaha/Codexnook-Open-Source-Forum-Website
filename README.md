@@ -1,6 +1,6 @@
-# 🌐 CodexNook - Forum Sitesi
+# 🌐 CodexNook - Forum Website
 
-CodexNook, PHP ve MySQL kullanılarak geliştirilmiş modern bir forum platformudur. Kullanıcıların konu açabileceği, yorum yapabileceği ve etkileşimde bulunabileceği bir topluluk sitesidir.
+CodexNook is a modern forum platform developed using PHP and MySQL. It's a community site where users can open topics, make comments, and interact with each other.
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -9,85 +9,85 @@ CodexNook, PHP ve MySQL kullanılarak geliştirilmiş modern bir forum platformu
 
 ---
 
-## 📸 Ekran Görüntüleri
+## 📸 Screenshots
 
-### 🏠 Ana Sayfa
+### 🏠 Home Page
 <img width="1919" height="904" alt="Image" src="https://github.com/user-attachments/assets/909f4d04-9a8f-4e7f-8ef1-dccc668314bf" />
 
-### 🔐 Giriş & Kayıt
+### 🔐 Login & Register
 <div align="center">
   <img width="1919" height="900" alt="Image" src="https://github.com/user-attachments/assets/83cee2d6-12d8-4361-ad4d-312ac8e84509" width="45%">
   <img width="1919" height="905" alt="Image" src="https://github.com/user-attachments/assets/d4e09a30-cbb4-4f44-8a45-3ee5fd67981d" width="45%">
 </div>
 
-### 👤 Profil Sayfası
+### 👤 Profile Page
 <img width="1919" height="903" alt="Image" src="https://github.com/user-attachments/assets/ab21084b-0280-4669-bb0d-e9a0dad540d2" />
 
-### 👥 Üyeler Listesi
+### 👥 Members List
 <img width="1919" height="905" alt="Image" src="https://github.com/user-attachments/assets/fabd6fea-5a4b-432e-8909-2a027d28549e" />
 
 ---
 
-## ✨ Özellikler
+## ✨ Features
 
-### 👤 Kullanıcı Yönetimi
-- ✅ Güvenli kayıt olma sistemi
-- ✅ Kullanıcı girişi ve çıkışı
-- ✅ Kişiselleştirilmiş profil sayfaları
-- ✅ Üye listesi ve profil görüntüleme
-- ✅ Oturum yönetimi
+### 👤 User Management
+- ✅ Secure registration system
+- ✅ User login and logout
+- ✅ Personalized profile pages
+- ✅ Members list and profile viewing
+- ✅ Session management
 
-### 💬 Forum Özellikleri
-- ✅ Konu açma ve düzenleme
-- ✅ Yorum yapma
-- ✅ Kategori bazlı içerik organizasyonu
-- ✅ Kullanıcı aktivite takibi
-- ✅ Son konular ve yanıtlar
+### 💬 Forum Features
+- ✅ Create and edit topics
+- ✅ Comment on topics
+- ✅ Category-based content organization
+- ✅ User activity tracking
+- ✅ Latest topics and replies
 
-### ⚙️ Admin Paneli
-- ✅ Kategori ekleme ve yönetimi
-- ✅ İçerik moderasyonu
-- ✅ Kullanıcı yönetimi
-- ✅ Yetki kontrolü
+### ⚙️ Admin Panel
+- ✅ Add and manage categories
+- ✅ Content moderation
+- ✅ User management
+- ✅ Permission control
 
-### 🎨 Modern Tasarım
-- ✅ Responsive (mobil uyumlu) tasarım
-- ✅ Minimalist ve temiz arayüz
-- ✅ Kullanıcı dostu deneyim
-- ✅ Smooth animasyonlar
-- ✅ Modern renk paleti (#3498db mavi teması)
+### 🎨 Modern Design
+- ✅ Responsive (mobile-friendly) design
+- ✅ Minimalist and clean interface
+- ✅ User-friendly experience
+- ✅ Smooth animations
+- ✅ Modern color palette (#3498db blue theme)
 
 ---
 
-## 🚀 Kurulum
+## 🚀 Installation
 
-### Gereksinimler
+### Requirements
 
-- **PHP** 7.4 veya üzeri
-- **MySQL** 5.7 veya üzeri
-- **Apache/Nginx** web sunucusu
-- **XAMPP/WAMP** (yerel geliştirme için)
+- **PHP** 7.4 or higher
+- **MySQL** 5.7 or higher
+- **Apache/Nginx** web server
+- **XAMPP/WAMP** (for local development)
 
-### 📥 Adım Adım Kurulum
+### 📥 Step by Step Installation
 
-#### 1️⃣ Projeyi İndirin
+#### 1️⃣ Clone the Project
 ```bash
 git clone https://github.com/baltacibaha/codexnook.git
 cd codexnook
 ```
 
-#### 2️⃣ Veritabanını Oluşturun
+#### 2️⃣ Create the Database
 
-- **phpMyAdmin**'e gidin
-- Yeni bir veritabanı oluşturun: `forumsitesi`
-- `database.sql` dosyasını import edin
+- Go to **phpMyAdmin**
+- Create a new database: `forumsitesi`
+- Import the `database.sql` file
 ```sql
 CREATE DATABASE forumsitesi CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-#### 3️⃣ Veritabanı Ayarlarını Yapın
+#### 3️⃣ Configure Database Settings
 
-`ayar.php` dosyasını açın ve bilgilerinizi girin:
+Open the `ayar.php` file and enter your information:
 ```php
 <?php
 $host = "localhost";
@@ -99,75 +99,75 @@ try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
-    die("Bağlantı hatası: " . $e->getMessage());
+    die("Connection error: " . $e->getMessage());
 }
 ?>
 ```
 
-#### 4️⃣ Admin Kullanıcı Oluşturun
+#### 4️⃣ Create Admin User
 
-Veritabanında admin yetkisi vermek için:
+To grant admin privileges in the database:
 ```sql
 UPDATE uyeler SET uye_onay = 1 WHERE uye_id = 1;
 ```
 
-#### 5️⃣ Projeyi Çalıştırın
+#### 5️⃣ Run the Project
 
-- XAMPP/WAMP'ı başlatın
-- Apache ve MySQL servislerini açın
-- Tarayıcınızda açın: `http://localhost/index.php`
+- Start XAMPP/WAMP
+- Turn on Apache and MySQL services
+- Open in your browser: `http://localhost/index.php`
 
 ---
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 ```
 codexnook/
 │
-├── 📄 index.php              # Ana sayfa
-├── 📄 uyelik.php             # Giriş/Kayıt sayfası
-├── 📄 profil.php             # Kullanıcı profil sayfası
-├── 📄 uyeler.php             # Üye listesi
-├── 📄 admin.php              # Admin paneli
-├── 📄 konu.php               # Konu detay sayfası
-├── 📄 kategori.php           # Kategori sayfası
+├── 📄 index.php              # Home page
+├── 📄 uyelik.php             # Login/Register page
+├── 📄 profil.php             # User profile page
+├── 📄 uyeler.php             # Members list
+├── 📄 admin.php              # Admin panel
+├── 📄 konu.php               # Topic detail page
+├── 📄 kategori.php           # Category page
 │
-├── ⚙️ ayar.php               # Veritabanı ayarları
-├── 🔐 ukas.php               # Kimlik doğrulama sistemi
-├── 🛠️ func.php               # Yardımcı fonksiyonlar
+├── ⚙️ ayar.php               # Database settings
+├── 🔐 ukas.php               # Authentication system
+├── 🛠️ func.php               # Helper functions
 │
-├── 📱 header.php             # Header componenti
-├── 📱 header2.php            # Alternatif header
+├── 📱 header.php             # Header component
+├── 📱 header2.php            # Alternative header
 │
-├── 🎨 main.css               # Ana stil dosyası
-├── 🎨 uyelik.css             # Giriş/Kayıt stilleri
-├── 🎨 admin.css              # Admin paneli stilleri
+├── 🎨 main.css               # Main stylesheet
+├── 🎨 uyelik.css             # Login/Register styles
+├── 🎨 admin.css              # Admin panel styles
 │
-├── 📸 screenshots/           # Ekran görüntüleri
+├── 📸 screenshots/           # Screenshots
 │   ├── home.png
 │   ├── login.png
 │   ├── profile.png
 │   └── ...
 │
-├── 🖼️ icon.png               # Site ikonu
-└── 📖 README.md              # Bu dosya
+├── 🖼️ icon.png               # Site icon
+└── 📖 README.md              # This file
 ```
 
 ---
 
-## 🗄️ Veritabanı Yapısı
+## 🗄️ Database Structure
 
-### Tablolar
+### Tables
 
-| Tablo | Açıklama |
-|-------|----------|
-| **uyeler** | Kullanıcı bilgileri (id, ad, soyad, email, şifre, onay) |
-| **konular** | Forum konuları (id, başlık, içerik, kategori, yazar) |
-| **yorumlar** | Konu yorumları (id, konu_id, yazar, içerik) |
-| **kategoriler** | Kategori listesi (id, kategori_adı, link) |
+| Table | Description |
+|-------|-------------|
+| **uyeler** | User information (id, name, surname, email, password, approval) |
+| **konular** | Forum topics (id, title, content, category, author) |
+| **yorumlar** | Topic comments (id, topic_id, author, content) |
+| **kategoriler** | Category list (id, category_name, link) |
 
-### Veritabanı Şeması
+### Database Schema
 ```sql
--- Kullanıcılar Tablosu
+-- Users Table
 CREATE TABLE uyeler (
     uye_id INT AUTO_INCREMENT PRIMARY KEY,
     uye_adsoyad VARCHAR(100),
@@ -177,14 +177,14 @@ CREATE TABLE uyeler (
     uye_onay TINYINT DEFAULT 0
 );
 
--- Kategoriler Tablosu
+-- Categories Table
 CREATE TABLE kategoriler (
     k_id INT AUTO_INCREMENT PRIMARY KEY,
     k_kategori VARCHAR(100),
     k_kategori_link VARCHAR(100)
 );
 
--- Konular Tablosu
+-- Topics Table
 CREATE TABLE konular (
     konu_id INT AUTO_INCREMENT PRIMARY KEY,
     konu_ad VARCHAR(255),
@@ -195,7 +195,7 @@ CREATE TABLE konular (
     konu_tarih TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Yorumlar Tablosu
+-- Comments Table
 CREATE TABLE yorumlar (
     y_id INT AUTO_INCREMENT PRIMARY KEY,
     y_konu_id INT,
@@ -207,96 +207,95 @@ CREATE TABLE yorumlar (
 
 ---
 
-## 🔐 Güvenlik Özellikleri
+## 🔐 Security Features
 
-- ✅ **Şifreleme:** MD5 + SHA1 double hash
-- ✅ **SQL Injection Koruması:** PDO prepared statements
-- ✅ **XSS Koruması:** `htmlspecialchars()` filtreleme
-- ✅ **Session Yönetimi:** Güvenli oturum kontrolü
-- ✅ **Email Validasyon:** Gerçek email kontrolü
+- ✅ **Encryption:** MD5 + SHA1 double hash
+- ✅ **SQL Injection Protection:** PDO prepared statements
+- ✅ **XSS Protection:** `htmlspecialchars()` filtering
+- ✅ **Session Management:** Secure session control
+- ✅ **Email Validation:** Real email verification
 
 ---
 
-### ⚙️ Admin Paneli
+### ⚙️ Admin Panel
 
-Admin paneline erişmek için:
+To access the admin panel:
 ```sql
 UPDATE uyeler SET uye_onay = 1 WHERE uye_id = YOUR_ID;
 ```
 
-Sonra `/admin.php` adresine gidin.
+Then visit `/admin.php`.
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## 🛠️ Technologies Used
 
-| Teknoloji | Versiyon | Kullanım Amacı |
-|-----------|----------|----------------|
-| PHP | 7.4+ | Backend geliştirme |
-| MySQL | 5.7+ | Veritabanı yönetimi |
-| PDO | - | Güvenli veritabanı bağlantısı |
-| HTML5 | - | Sayfa yapısı |
-| CSS3 | - | Stil ve tasarım |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| PHP | 7.4+ | Backend development |
+| MySQL | 5.7+ | Database management |
+| PDO | - | Secure database connection |
+| HTML5 | - | Page structure |
+| CSS3 | - | Styling and design |
 
-### Kütüphaneler ve Araçlar
+### Libraries and Tools
 
-- **UKAS** - Kullanıcı kimlik doğrulama sistemi
-- **PDO** - MySQL bağlantısı
-- **MD5 + SHA1** - Şifre hashleme
-
----
-
-
-## 🤝 Katkıda Bulunma
-
-Katkılarınızı bekliyoruz! 🎉
-
-### Nasıl Katkıda Bulunurum?
-
-1. **Fork** yapın
-2. Yeni bir **branch** oluşturun
-```bash
-   git checkout -b feature/YeniOzellik
-```
-3. Değişikliklerinizi **commit** edin
-```bash
-   git commit -m 'feat: Yeni özellik eklendi'
-```
-4. Branch'inizi **push** edin
-```bash
-   git push origin feature/YeniOzellik
-```
-5. **Pull Request** açın
+- **UKAS** - User authentication system
+- **PDO** - MySQL connection
+- **MD5 + SHA1** - Password hashing
 
 ---
 
-## 📧 İletişim
+## 🤝 Contributing
+
+We welcome your contributions! 🎉
+
+### How to Contribute?
+
+1. **Fork** the repository
+2. Create a new **branch**
+```bash
+   git checkout -b feature/NewFeature
+```
+3. **Commit** your changes
+```bash
+   git commit -m 'feat: Add new feature'
+```
+4. **Push** your branch
+```bash
+   git push origin feature/NewFeature
+```
+5. Open a **Pull Request**
+
+---
+
+## 📧 Contact
 
 **Baha Baltacı**
 
 - 📧 Email: baltacibaha476@gmail.com
 - 🐙 GitHub: [@baltacibaha](https://github.com/baltacibaha)
-- 🔗 Proje: [CodexNook](https://github.com/baltacibaha/Codexnook-Open-Source-Forum-Website)
+- 🔗 Project: [CodexNook](https://github.com/baltacibaha/Codexnook-Open-Source-Forum-Website)
 
 ---
 
-## 🙏 Teşekkürler
+## 🙏 Thanks
 
-- **MorphaxTheDeveloper** - [MorphaxTheDeveloper](https://github.com/MorphaxTheDeveloper) Tüm Destekleri İçin 💙
-- **Tüm katkıda bulunanlara** - Destekleri için 
+- **MorphaxTheDeveloper** - [MorphaxTheDeveloper](https://github.com/MorphaxTheDeveloper) For all the support 💙
+- **All contributors** - For their support
 
 ---
 
-## ⭐ Yıldız Verin!
+## ⭐ Give a Star!
 
-Bu projeyi beğendiyseniz **yıldız** ⭐ vermeyi unutmayın!
+If you like this project, don't forget to give it a **star** ⭐!
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [Baha Baltacı](https://github.com/kullanici-adiniz)**
+**Made with ❤️ by [Baha Baltacı](https://github.com/baltacibaha)**
 
-[⬆ Yukarı Çık](#-codexnook---forum-sitesi)
+[⬆ Back to Top](#-codexnook---forum-website)
 
 </div>
