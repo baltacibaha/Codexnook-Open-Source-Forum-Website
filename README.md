@@ -72,7 +72,7 @@
 
 #### 1️⃣ Clone the Project
 ```bash
-git clone https://github.com/baltacibaha/codexnook.git
+git clone https://github.com/baltacibaha/Open-Source-Forum-Website.git
 cd codexnook
 ```
 
