@@ -11,7 +11,7 @@ include 'ukas.php';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodexNook | Giriş & Kayıt</title>
+    <title>Forum | Giriş & Kayıt</title>
     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="uyelik.css" />
 </head>
@@ -56,7 +56,7 @@ include 'ukas.php';
                         <div class="auth-header">
                             <div class="auth-icon">👤</div>
                             <h1>Kayıt Ol</h1>
-                            <p>CodexNook'a hoş geldiniz!</p>
+                            <p>Forum'a hoş geldiniz!</p>
                         </div>
                         
                         <form action="" method="POST" class="auth-form">
@@ -173,3 +173,4 @@ include 'ukas.php';
 
 </body>
 </html>
+
