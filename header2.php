@@ -10,13 +10,13 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>baha</title>
+    <title>Forum</title>
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <h1>baha</h1>
+            <h1>Forum</h1>
         </div>
     </header>
 
@@ -46,4 +46,5 @@ if (session_status() === PHP_SESSION_NONE) {
 </body>
 
 </html>
+
 
