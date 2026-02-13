@@ -12,7 +12,7 @@ include 'func.php';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Üyelerimiz</title>
+    <title>Profil</title>
     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="main.css" />
 </head>
@@ -125,4 +125,5 @@ include 'func.php';
         </table>
     </center>
 </html>
+
 
