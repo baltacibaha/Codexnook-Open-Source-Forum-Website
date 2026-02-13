@@ -2,7 +2,7 @@
 
 // Her sayfaya girildiğinde Google'ye ping gönderme kodu
 
-// Kullanımı: <link rel="pingback" href="https://codexnook.com/pingback.php" />
+// Kullanımı: <link rel="pingback" href="https://forum.com/pingback.php" />
 
 function pingGoogleSitemaps($url_xml)
 {
@@ -28,8 +28,9 @@ function pingGoogleSitemaps($url_xml)
 }
 
 // Once the sitemaps are ready, we ping Google... 
-if (200 === ($status = pingGoogleSitemaps('https://codexnook.com/sitemap.xml')))
+if (200 === ($status = pingGoogleSitemaps('https://forum.com/sitemap.xml')))
     echo "
  pingleme tamam";
 else
+
     echo "error: pingleme tamam değil";
