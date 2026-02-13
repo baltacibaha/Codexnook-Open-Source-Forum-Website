@@ -15,7 +15,7 @@ require_once 'func.php';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodexNook | Yazılım Forumu</title>
+    <title>Yazılım-Teknoloji Forumu</title>
     <link rel="stylesheet" href="main.css" />
 </head>
 <body>
@@ -90,3 +90,4 @@ require_once 'func.php';
 
 </body>
 </html>
+
