@@ -12,7 +12,7 @@
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-<img width="1919" height="904" alt="Image" src="https://github.com/user-attachments/assets/909f4d04-9a8f-4e7f-8ef1-dccc668314bf" />
+<img width="1919" height="908" alt="Image" src="https://github.com/user-attachments/assets/67dda142-c1c4-4bca-9f73-78ed6c02ce88" />
 
 ### 🔐 Login & Register
 <div align="center">
@@ -21,10 +21,10 @@
 </div>
 
 ### 👤 Profile Page
-<img width="1919" height="903" alt="Image" src="https://github.com/user-attachments/assets/ab21084b-0280-4669-bb0d-e9a0dad540d2" />
+<img width="1919" height="900" alt="Image" src="https://github.com/user-attachments/assets/290c044b-9307-4aa5-8b55-9101547a62ad" />
 
 ### 👥 Members List
-<img width="1919" height="905" alt="Image" src="https://github.com/user-attachments/assets/fabd6fea-5a4b-432e-8909-2a027d28549e" />
+<img width="1919" height="902" alt="Image" src="https://github.com/user-attachments/assets/cb4fd595-9a94-49bc-b1a9-be0c25067197" />
 
 ---
 
@@ -275,7 +275,7 @@ We welcome your contributions! 🎉
 
 - 📧 Email: baltacibaha476@gmail.com
 - 🐙 GitHub: [@baltacibaha](https://github.com/baltacibaha)
-- 🔗 Project: [CodexNook](https://github.com/baltacibaha/Codexnook-Open-Source-Forum-Website)
+- 🔗 Project: [Open-Source-Forum-Website](https://github.com/baltacibaha/Open-Source-Forum-Website)
 
 ---
 
