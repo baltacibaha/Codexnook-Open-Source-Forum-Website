@@ -34,4 +34,5 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://codexnook.com/sitemap.xml
+Sitemap: https://forum.com/sitemap.xml
+
