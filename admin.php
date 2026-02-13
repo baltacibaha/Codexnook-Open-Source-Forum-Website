@@ -25,7 +25,7 @@ if (!isset($_SESSION["uye_id"]) || !in_array((int)$_SESSION["uye_id"], $admin_id
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodexNook.com/Admin</title>
+    <title>Forum.com/Admin</title>
     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="admin.css" />
 </head>
@@ -92,3 +92,4 @@ if (!isset($_SESSION["uye_id"]) || !in_array((int)$_SESSION["uye_id"], $admin_id
 </body>
 
 </html>
+
