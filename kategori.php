@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3809740976001286"
      crossorigin="anonymous"></script>
-    <title>CodexNook.com/Kategori</title>
+    <title>Forum/Kategori</title>
   <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
 </head>
 
@@ -62,4 +62,5 @@
 
             ?>
         </ul>
+
     </center>
