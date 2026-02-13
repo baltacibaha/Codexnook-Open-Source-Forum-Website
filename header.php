@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>CodexNook</h1>
+                <h1>Forum</h1>
             </div>
             <div class="menu">
                 <?php
@@ -46,3 +46,4 @@
 </body>
 
 </html>
+
