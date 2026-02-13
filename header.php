@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Forum</h1>
+                <h1>baha</h1>
             </div>
             <div class="menu">
                 <?php
@@ -46,4 +46,5 @@
 </body>
 
 </html>
+
 
