@@ -1,6 +1,6 @@
-# 🌐 CodexNook - Forum Website
+# Open Source Forum Website
 
-CodexNook is a modern forum platform developed using PHP and MySQL. It's a community site where users can open topics, make comments, and interact with each other.
+ A modern forum platform developed using PHP and MySQL. It's a community site where users can open topics, make comments, and interact with each other.
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
